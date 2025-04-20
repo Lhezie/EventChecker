@@ -29,29 +29,38 @@ app.get("/users", async (req, res) => {
   }
 });
 
-app.get("/send-test-email", async (req, res) => {
+app.post("/send-test-email", async (req, res) => {
+  const { to } = req.body;
+
+  if (!to) {
+    return res.status(400).json({ error: "Recipient email (to) is required." });
+  }
+
   try {
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      service: 'yahoo', // or 'gmail' if using Gmail
       auth: {
         user: process.env.EMAIL,
         pass: process.env.EMAIL_PASSWORD,
       },
     });
 
-    await transporter.sendMail({
+    const mailOptions = {
       from: process.env.EMAIL,
-      to: "ugolibunor@yahoo.com", // replace with your actual email
-      subject: "🎉 Test Email",
-      text: "This is a test to confirm your birthday reminder emails are working.",
-    });
+      to,
+      subject: "🎉 Test Email from Birthday App",
+      text: `Hi there! This is a test email sent from your backend setup.`,
+      html: `<p><strong>Hi there!</strong></p><p>This is a <em>test email</em> sent from your <code>/send-test-email</code> route.</p>`,
+    };
 
-    res.status(200).send("Test email sent successfully!");
-  } catch (err) {
-    console.error("Error sending test email:", err);
-    res.status(500).send("Failed to send test email");
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: `Test email sent to ${to}` });
+  } catch (error) {
+    console.error("Error sending test email:", error);
+    res.status(500).json({ error: "Failed to send test email" });
   }
 });
+
 
 // Add a new user
 app.post(
