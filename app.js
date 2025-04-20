@@ -38,7 +38,7 @@ app.post("/send-test-email", async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      service: 'yahoo', // or 'gmail' if using Gmail
+      service: 'gmail', // or 'gmail' if using Gmail
       auth: {
         user: process.env.EMAIL,
         pass: process.env.EMAIL_PASSWORD,
