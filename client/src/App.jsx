@@ -26,8 +26,8 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <header className="sticky-header">
-        <h1>🎂 Birthday Reminder</h1>
+      <header className="sticky-header bg-yellow-400">
+        <h1>Birthday Reminder</h1>
         <p>Automatically send birthday emails to your friends</p>
       </header>
 

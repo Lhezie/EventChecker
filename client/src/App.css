@@ -93,7 +93,7 @@ form button {
   margin-top: 1rem;
   width: 100%;
   padding: 0.75rem;
-  background-color: #4f46e5;
+  background-color: #e99ddb;
   color: white;
   font-weight: bold;
   border: none;
@@ -102,7 +102,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #4338ca;
+  background-color: #e99ddb;
 }
 
 .error {
@@ -150,6 +150,7 @@ table th {
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f4f4fa;
+  background-image: url('../public/bdaebg.png');
   margin: 0;
   padding: 0;
 }
@@ -212,7 +213,7 @@ input {
 }
 
 button {
-  background-color: #4f46e5;
+  background-color: #f67ee0;
   color: white;
   padding: 0.75rem;
   border: none;
@@ -223,7 +224,7 @@ button {
 }
 
 button:hover {
-  background-color: #3730a3;
+  background-color: #e99ddb;
 }
 
 .form-footer {
@@ -248,7 +249,7 @@ select {
 .pagination-controls button {
   padding: 0.5rem 1rem;
   font-weight: bold;
-  background-color: #4f46e5;
+  background-color: #f67ee0;
   color: white;
   border: none;
   border-radius: 5px;
@@ -324,7 +325,7 @@ body {
 .form button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: #4f46e5;
+  background-color: #f67ee0;
   color: white;
   border: none;
   border-radius: 8px;
@@ -374,7 +375,7 @@ table td {
 
 .pagination-controls button {
   padding: 0.5rem 1rem;
-  background-color: #4f46e5;
+  background-color: #f67ee0;
   color: white;
   border: none;
   border-radius: 6px;
@@ -424,7 +425,7 @@ body, html {
 }
 
 .sticky-header {
-  background-color: #4f46e5;
+  background-color: #ee93dd;
   color: white;
   padding: 1rem;
   text-align: center;
