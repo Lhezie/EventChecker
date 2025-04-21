@@ -10,8 +10,11 @@ import { body, validationResult } from "express-validator";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://event-checker-one.vercel.app",
+}));
 app.use(express.json());
+
 
 // MongoDB Connection
 mongoose
