@@ -17,7 +17,8 @@ const Form = ({ onUserAdded }) => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:3020/add-user", data);
+      console.log("API:", process.env.REACT_APP_API_URL);
+      await axios.post(`${process.env.REACT_APP_API_URL}/add-user`, data);
       reset();
       toast.success("User Added Successfully!");
       onUserAdded(); // Trigger refresh in Table

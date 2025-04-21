@@ -11,7 +11,9 @@ function App() {
   // Fetch users
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3020/users");
+      console.log("API:", process.env.REACT_APP_API_URL);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/users`);
+      
       setUsers(res.data);
     } catch (err) {
       console.error("Error fetching users:", err);
